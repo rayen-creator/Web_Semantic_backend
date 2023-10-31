@@ -56,13 +56,13 @@
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Blog_post_has_author"/>
-                <allValuesFrom rdf:resource="&untitled-ontology-3;Company"/>
+                <allValuesFrom rdf:resource="&untitled-ontology-3;Applicant"/>
             </Restriction>
         </rdfs:range>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Blog_post_has_author"/>
-                <allValuesFrom rdf:resource="&untitled-ontology-3;Applicant"/>
+                <allValuesFrom rdf:resource="&untitled-ontology-3;Company"/>
             </Restriction>
         </rdfs:range>
     </ObjectProperty>
@@ -264,6 +264,15 @@
                 <allValuesFrom rdf:resource="&untitled-ontology-3;Blog"/>
             </Restriction>
         </rdfs:range>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#job_belongs_to_company -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-3;job_belongs_to_company">
+        <rdfs:range rdf:resource="&untitled-ontology-3;Company"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-3;Job"/>
     </ObjectProperty>
     
 
@@ -1545,6 +1554,32 @@
         <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;New_Release"/>
         <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Portfolio_Showcase"/>
     </NamedIndividual>
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;Announcement_3">
+        <rdf:type rdf:resource="&untitled-ontology-3;Announcement"/>
+        <untitled-ontology-3:Ann_Description rdf:datatype="&xsd;string">Introducing our latest update: Project Tracker! Keep all your projects organized, track progress, and meet deadlines effortlessly. Try it out today and experience a new level of project management.</untitled-ontology-3:Ann_Description>
+        <untitled-ontology-3:Ann_Title rdf:datatype="&xsd;string">New Release: Project Tracker</untitled-ontology-3:Ann_Title>
+        <untitled-ontology-3:Ann_Image_Url rdf:datatype="&xsd;string">https://www.ntaskmanager.com/wp-content/uploads/2020/08/project-tracker-tools.png</untitled-ontology-3:Ann_Image_Url>
+        <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Feature_Update"/>
+        <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;New_Release"/>
+        <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Project_Tracker"/>
+    </NamedIndividual>
+
+
+<NamedIndividual rdf:about="&untitled-ontology-3;Announcement_4">
+    <rdf:type rdf:resource="&untitled-ontology-3;Announcement"/>
+    <untitled-ontology-3:Ann_Description rdf:datatype="&xsd;string">Exciting news for employers! We've enhanced our search algorithm to help you find the perfect freelancer for your project. Connect with top talent quickly and efficiently. Get started today and find the right freelancer for your next project!</untitled-ontology-3:Ann_Description>
+    <untitled-ontology-3:Ann_Title rdf:datatype="&xsd;string">Improved Freelancer Search</untitled-ontology-3:Ann_Title>
+    <untitled-ontology-3:Ann_Image_Url rdf:datatype="&xsd;string">https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2019/03/best-freelance-websites-1.webp</untitled-ontology-3:Ann_Image_Url>
+    <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Feature_Update"/>
+    <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;New_Release"/>
+    <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Freelancer_Search"/>
+</NamedIndividual>
+
+
+
+
+
     
 
 
@@ -1557,6 +1592,7 @@
         <untitled-ontology-3:duration_of_use rdf:datatype="&xsd;string">Contract, 6 months</untitled-ontology-3:duration_of_use>
         <untitled-ontology-3:Name rdf:datatype="&xsd;string">Data Analyst</untitled-ontology-3:Name>
         <untitled-ontology-3:Status rdf:datatype="&xsd;string">Open</untitled-ontology-3:Status>
+        <untitled-ontology-3:job_belongs_to_company rdf:resource="&untitled-ontology-3;XYZ_Tech_Solutions"/>
     </NamedIndividual>
     
 
@@ -1600,6 +1636,7 @@ TechNex is at the forefront of technology, and I&apos;ve had the privilege of wo
         <untitled-ontology-3:Description rdf:datatype="&xsd;string">Create visual designs for marketing materials</untitled-ontology-3:Description>
         <untitled-ontology-3:Name rdf:datatype="&xsd;string">Graphic Designer</untitled-ontology-3:Name>
         <untitled-ontology-3:duration_of_use rdf:datatype="&xsd;string">Part-time, 20 hours/week</untitled-ontology-3:duration_of_use>
+        <untitled-ontology-3:job_belongs_to_company rdf:resource="&untitled-ontology-3;TechNex_Solutions"/>
     </NamedIndividual>
     
 
@@ -1810,7 +1847,7 @@ Along the way, we&apos;ll draw inspiration from successful entrepreneurs who&apo
 
 Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone with an innovative idea, this post is your roadmap to turning your entrepreneurial dreams into reality.</untitled-ontology-3:content_post>
         <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://fellow.app/wp-content/uploads/2022/03/inspo-meeting.jpg</untitled-ontology-3:Image_Post>
-        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;TechNex_Solutions,_Inc"/>
+        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;TechNex_Solutions"/>
     </NamedIndividual>
     
 
@@ -1883,9 +1920,9 @@ Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone wit
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#TechNex_Solutions,_Inc -->
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#TechNex_Solutions -->
 
-    <NamedIndividual rdf:about="&untitled-ontology-3;TechNex_Solutions,_Inc">
+    <NamedIndividual rdf:about="&untitled-ontology-3;TechNex_Solutions">
         <rdf:type rdf:resource="&untitled-ontology-3;Company"/>
         <untitled-ontology-3:Location_Company rdf:datatype="&xsd;string">56 Innovation Avenue, Techville, StateTech, 54321</untitled-ontology-3:Location_Company>
         <untitled-ontology-3:Founding_Date rdf:datatype="&xsd;dateTime">March 15, 2005</untitled-ontology-3:Founding_Date>
