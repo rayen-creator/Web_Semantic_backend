@@ -1524,6 +1524,32 @@
         <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;New_Release"/>
         <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Portfolio_Showcase"/>
     </NamedIndividual>
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;Announcement_3">
+        <rdf:type rdf:resource="&untitled-ontology-3;Announcement"/>
+        <untitled-ontology-3:Ann_Description rdf:datatype="&xsd;string">Introducing our latest update: Project Tracker! Keep all your projects organized, track progress, and meet deadlines effortlessly. Try it out today and experience a new level of project management.</untitled-ontology-3:Ann_Description>
+        <untitled-ontology-3:Ann_Title rdf:datatype="&xsd;string">New Release: Project Tracker</untitled-ontology-3:Ann_Title>
+        <untitled-ontology-3:Ann_Image_Url rdf:datatype="&xsd;string">https://www.ntaskmanager.com/wp-content/uploads/2020/08/project-tracker-tools.png</untitled-ontology-3:Ann_Image_Url>
+        <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Feature_Update"/>
+        <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;New_Release"/>
+        <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Project_Tracker"/>
+    </NamedIndividual>
+
+
+<NamedIndividual rdf:about="&untitled-ontology-3;Announcement_4">
+    <rdf:type rdf:resource="&untitled-ontology-3;Announcement"/>
+    <untitled-ontology-3:Ann_Description rdf:datatype="&xsd;string">Exciting news for employers! We've enhanced our search algorithm to help you find the perfect freelancer for your project. Connect with top talent quickly and efficiently. Get started today and find the right freelancer for your next project!</untitled-ontology-3:Ann_Description>
+    <untitled-ontology-3:Ann_Title rdf:datatype="&xsd;string">Improved Freelancer Search</untitled-ontology-3:Ann_Title>
+    <untitled-ontology-3:Ann_Image_Url rdf:datatype="&xsd;string">https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2019/03/best-freelance-websites-1.webp</untitled-ontology-3:Ann_Image_Url>
+    <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Feature_Update"/>
+    <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;New_Release"/>
+    <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Freelancer_Search"/>
+</NamedIndividual>
+
+
+
+
+
     
 
 
