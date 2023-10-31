@@ -8,6 +8,7 @@ import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.tools.JenaEngine;
