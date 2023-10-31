@@ -23,13 +23,6 @@ public class Job_companyController {
     @GetMapping("/getcompany")
     public String getcompany() {
 
-//        String qexec = "PREFIX ns: <http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#>\n" +
-//                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-//                "\n" +
-//                "SELECT ?user\n" +
-//                "WHERE {\n" +
-//                "?user rdf:type ns:Admin .\n" +
-//                "}";
         String qexec = "PREFIX ns: <http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#>\n" +
                 "SELECT ?company ?property ?value\n" +
                 "WHERE {\n" +
@@ -91,13 +84,6 @@ public class Job_companyController {
     @GetMapping("/getcompanybyname/{Name_Company}")
     public String getcompanybyname(@PathVariable("Name_Company") String Name_Company) {
 
-//        String qexec = "PREFIX ns: <http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#>\n" +
-//                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-//                "\n" +
-//                "SELECT ?user\n" +
-//                "WHERE {\n" +
-//                "?user rdf:type ns:Admin .\n" +
-//                "}";
         String qexec = "PREFIX ns: <http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#>\n" +
                 "SELECT ?company ?property ?value\n" +
                 "WHERE {\n" +
@@ -160,13 +146,6 @@ public class Job_companyController {
     @GetMapping("/getJob")
     public String getJob() {
 
-//        String qexec = "PREFIX ns: <http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#>\n" +
-//                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-//                "\n" +
-//                "SELECT ?user\n" +
-//                "WHERE {\n" +
-//                "?user rdf:type ns:Admin .\n" +
-//                "}";
         String qexec = "PREFIX ns: <http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#>\n" +
                 "SELECT ?job ?property ?value\n" +
                 "WHERE {\n" +
@@ -227,13 +206,6 @@ public class Job_companyController {
     @GetMapping("/getJobBycompany/{Name_Company}")
     public String getJobBycompany (@PathVariable("Name_Company") String Name_Company) {
 
-//        String qexec = "PREFIX ns: <http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#>\n" +
-//                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-//                "\n" +
-//                "SELECT ?user\n" +
-//                "WHERE {\n" +
-//                "?user rdf:type ns:Admin .\n" +
-//                "}";
         String qexec = "PREFIX ns: <http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#>\n" +
                 "SELECT ?job ?property ?value\n" +
                 "WHERE {\n" +
