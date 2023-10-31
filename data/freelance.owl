@@ -57,13 +57,13 @@
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Blog_post_has_author"/>
-                <allValuesFrom rdf:resource="&untitled-ontology-3;Company"/>
+                <allValuesFrom rdf:resource="&untitled-ontology-3;Applicant"/>
             </Restriction>
         </rdfs:range>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Blog_post_has_author"/>
-                <allValuesFrom rdf:resource="&untitled-ontology-3;Applicant"/>
+                <allValuesFrom rdf:resource="&untitled-ontology-3;Company"/>
             </Restriction>
         </rdfs:range>
     </ObjectProperty>
@@ -265,6 +265,15 @@
                 <allValuesFrom rdf:resource="&untitled-ontology-3;Blog"/>
             </Restriction>
         </rdfs:range>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#job_belongs_to_company -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-3;job_belongs_to_company">
+        <rdfs:range rdf:resource="&untitled-ontology-3;Company"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-3;Job"/>
     </ObjectProperty>
     
 
@@ -1536,6 +1545,7 @@
         <untitled-ontology-3:duration_of_use rdf:datatype="&xsd;string">Contract, 6 months</untitled-ontology-3:duration_of_use>
         <untitled-ontology-3:Name rdf:datatype="&xsd;string">Data Analyst</untitled-ontology-3:Name>
         <untitled-ontology-3:Status rdf:datatype="&xsd;string">Open</untitled-ontology-3:Status>
+        <untitled-ontology-3:job_belongs_to_company rdf:resource="&untitled-ontology-3;XYZ_Tech_Solutions"/>
     </NamedIndividual>
     
 
@@ -1579,6 +1589,7 @@ TechNex is at the forefront of technology, and I&apos;ve had the privilege of wo
         <untitled-ontology-3:Description rdf:datatype="&xsd;string">Create visual designs for marketing materials</untitled-ontology-3:Description>
         <untitled-ontology-3:Name rdf:datatype="&xsd;string">Graphic Designer</untitled-ontology-3:Name>
         <untitled-ontology-3:duration_of_use rdf:datatype="&xsd;string">Part-time, 20 hours/week</untitled-ontology-3:duration_of_use>
+        <untitled-ontology-3:job_belongs_to_company rdf:resource="&untitled-ontology-3;TechNex_Solutions"/>
     </NamedIndividual>
     
 
@@ -1789,7 +1800,7 @@ Along the way, we&apos;ll draw inspiration from successful entrepreneurs who&apo
 
 Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone with an innovative idea, this post is your roadmap to turning your entrepreneurial dreams into reality.</untitled-ontology-3:content_post>
         <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://fellow.app/wp-content/uploads/2022/03/inspo-meeting.jpg</untitled-ontology-3:Image_Post>
-        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;TechNex_Solutions,_Inc"/>
+        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;TechNex_Solutions"/>
     </NamedIndividual>
     
 
@@ -1862,9 +1873,9 @@ Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone wit
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#TechNex_Solutions,_Inc -->
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#TechNex_Solutions -->
 
-    <NamedIndividual rdf:about="&untitled-ontology-3;TechNex_Solutions,_Inc">
+    <NamedIndividual rdf:about="&untitled-ontology-3;TechNex_Solutions">
         <rdf:type rdf:resource="&untitled-ontology-3;Company"/>
         <untitled-ontology-3:Location_Company rdf:datatype="&xsd;string">56 Innovation Avenue, Techville, StateTech, 54321</untitled-ontology-3:Location_Company>
         <untitled-ontology-3:Founding_Date rdf:datatype="&xsd;dateTime">March 15, 2005</untitled-ontology-3:Founding_Date>
