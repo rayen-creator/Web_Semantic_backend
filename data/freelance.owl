@@ -4,7 +4,6 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY untitled-ontology-3 "http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#" >
@@ -17,8 +16,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <Ontology rdf:about="http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3"/>
     
 
@@ -58,14 +56,13 @@
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Blog_post_has_author"/>
-                <allValuesFrom>
-                    <Class>
-                        <unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&untitled-ontology-3;Applicant"/>
-                            <rdf:Description rdf:about="&untitled-ontology-3;Company"/>
-                        </unionOf>
-                    </Class>
-                </allValuesFrom>
+                <allValuesFrom rdf:resource="&untitled-ontology-3;Company"/>
+            </Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-3;Blog_post_has_author"/>
+                <allValuesFrom rdf:resource="&untitled-ontology-3;Applicant"/>
             </Restriction>
         </rdfs:range>
     </ObjectProperty>
@@ -179,8 +176,14 @@
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Post_has_comments -->
 
     <ObjectProperty rdf:about="&untitled-ontology-3;Post_has_comments">
+        <rdfs:domain rdf:resource="&untitled-ontology-3;Blog"/>
         <rdfs:range rdf:resource="&untitled-ontology-3;Blog_Comment"/>
-        <rdfs:domain rdf:resource="&untitled-ontology-3;Blog_Post"/>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-3;Post_has_comments"/>
+                <someValuesFrom rdf:resource="&untitled-ontology-3;Blog_Comment"/>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -247,6 +250,20 @@
     <ObjectProperty rdf:about="&untitled-ontology-3;admin_verifies_user_account">
         <rdfs:domain rdf:resource="&untitled-ontology-3;Admin"/>
         <rdfs:range rdf:resource="&untitled-ontology-3;Applicant"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#comment_belongs_to_post -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-3;comment_belongs_to_post">
+        <rdfs:domain rdf:resource="&untitled-ontology-3;Blog_Comment"/>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&untitled-ontology-3;comment_belongs_to_post"/>
+                <allValuesFrom rdf:resource="&untitled-ontology-3;Blog"/>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -335,20 +352,42 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Author -->
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Ann_Description -->
 
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Author">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Report"/>
+    <DatatypeProperty rdf:about="&untitled-ontology-3;Ann_Description">
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Announcement"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Ann_Image_Url -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-3;Ann_Image_Url">
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Announcement"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Benefits -->
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Ann_Title -->
 
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Benefits">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Offer"/>
+    <DatatypeProperty rdf:about="&untitled-ontology-3;Ann_Title">
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Announcement"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Announcement -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-3;Announcement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Announcement_Tag -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-3;Blog">
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
     </DatatypeProperty>
     
 
@@ -359,18 +398,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Blog_post -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Blog_post">
-        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
-    </DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Category -->
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;Category">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Blog_post"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Blog"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
@@ -458,7 +489,7 @@
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Date_Post -->
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;Date_Post">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Blog_post"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Blog"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </DatatypeProperty>
     
@@ -545,7 +576,7 @@
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Image_Post -->
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;Image_Post">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Blog_post"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Blog"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
@@ -818,7 +849,7 @@
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Title -->
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;Title">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Blog_post"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Blog"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
@@ -843,6 +874,15 @@
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;content">
         <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Contrat"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#content_post -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-3;content_post">
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Blog"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
@@ -970,7 +1010,7 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Applicant -->
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Announcement -->
 
     <Class rdf:about="&untitled-ontology-3;Applicant">
         <rdfs:subClassOf rdf:resource="&untitled-ontology-3;User"/>
@@ -978,10 +1018,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Blog -->
+
+    <Class rdf:about="&untitled-ontology-3;Announcement_tag">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Announcement"/>
+    </Class>
+    
+
+
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Blog_Comment -->
 
     <Class rdf:about="&untitled-ontology-3;Blog_Comment">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog_Post"/>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog"/>
     </Class>
     
 
@@ -1003,7 +1051,7 @@
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Career_Advice -->
 
     <Class rdf:about="&untitled-ontology-3;Career_Advice">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog_Post"/>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog"/>
     </Class>
     
 
@@ -1087,7 +1135,7 @@
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Entrepreneurship -->
 
     <Class rdf:about="&untitled-ontology-3;Entrepreneurship">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog_Post"/>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog"/>
     </Class>
     
 
@@ -1209,7 +1257,7 @@
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Mentorship -->
 
     <Class rdf:about="&untitled-ontology-3;Mentorship">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog_Post"/>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog"/>
     </Class>
     
 
@@ -1335,7 +1383,7 @@
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Success_Stories -->
 
     <Class rdf:about="&untitled-ontology-3;Success_Stories">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog_Post"/>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog"/>
     </Class>
     
 
@@ -1544,19 +1592,6 @@ TechNex is at the forefront of technology, and I&apos;ve had the privilege of wo
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#From_Dreams_to_Reality -->
-
-    <NamedIndividual rdf:about="&untitled-ontology-3;From_Dreams_to_Reality">
-        <rdf:type rdf:resource="&untitled-ontology-3;Blog_Post"/>
-        <untitled-ontology-3:Date_Post rdf:datatype="&xsd;dateTime">October 18, 2023</untitled-ontology-3:Date_Post>
-        <untitled-ontology-3:Category rdf:datatype="&xsd;string">Success Story</untitled-ontology-3:Category>
-        <untitled-ontology-3:Title rdf:datatype="&xsd;string">he Inspiring Journey of a Local Entrepreneur</untitled-ontology-3:Title>
-        <untitled-ontology-3:Post_has_comments rdf:resource="&untitled-ontology-3;comment_1"/>
-        <untitled-ontology-3:Post_has_comments rdf:resource="&untitled-ontology-3;comment_2"/>
-    </NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Graphic_Designer -->
 
     <NamedIndividual rdf:about="&untitled-ontology-3;Graphic_Designer">
@@ -1584,12 +1619,6 @@ Techtown, Silicon Valley, CA 12345</untitled-ontology-3:location>
         <untitled-ontology-3:Event_has__attendees rdf:resource="&untitled-ontology-3;Nour_Makdouli"/>
         <untitled-ontology-3:Event_has_reservation rdf:resource="&untitled-ontology-3;Reservation2"/>
     </NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Interview -->
-
-    <NamedIndividual rdf:about="&untitled-ontology-3;Interview"/>
     
 
 
@@ -1717,6 +1746,75 @@ Silicon Valley, CA 12345</untitled-ontology-3:Location>
     
 
 
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Post_1 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;Post_1">
+        <rdf:type rdf:resource="&untitled-ontology-3;Blog"/>
+        <untitled-ontology-3:Date_Post rdf:datatype="&xsd;dateTime">11/11/2023</untitled-ontology-3:Date_Post>
+        <untitled-ontology-3:Category rdf:datatype="&xsd;string">Mentorship</untitled-ontology-3:Category>
+        <untitled-ontology-3:content_post rdf:datatype="&xsd;string">Mentorship is a powerful tool for personal and professional growth. In this post, we&apos;ll delve into the world of mentorship and explore how it can positively impact your life and career.
+
+Mentorship involves a seasoned and experienced individual (the mentor) providing guidance, support, and wisdom to someone less experienced (the mentee). It&apos;s a relationship built on trust and a shared commitment to personal and professional development.
+
+Throughout this post, we&apos;ll discuss the following key aspects of mentorship:
+
+The benefits of having a mentor, such as gaining insights, expanding your network, and accelerating your learning curve.
+How to find the right mentor for your needs and goals.
+Tips for being an effective mentor if you&apos;re in a position to help others.
+Real-life mentorship success stories, showcasing the transformative effects of this relationship.
+Whether you&apos;re seeking guidance to advance your career or considering becoming a mentor to help others, this post will provide valuable insights into the world of mentorship.</untitled-ontology-3:content_post>
+        <untitled-ontology-3:Title rdf:datatype="&xsd;string">The Power of Mentorship: Nurturing Talent</untitled-ontology-3:Title>
+        <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://2456764.fs1.hubspotusercontent-na1.net/hubfs/2456764/YoungPeopleBusinessMeeting_1200x627.jpg
+</untitled-ontology-3:Image_Post>
+        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;Sarra_Tounsi"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Post_2 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;Post_2">
+        <rdf:type rdf:resource="&untitled-ontology-3;Blog"/>
+        <untitled-ontology-3:Date_Post rdf:datatype="&xsd;dateTime">October 18, 2023</untitled-ontology-3:Date_Post>
+        <untitled-ontology-3:Category rdf:datatype="&xsd;string">Success Stories</untitled-ontology-3:Category>
+        <untitled-ontology-3:content_post rdf:datatype="&xsd;string">There&apos;s something truly inspiring about hearing the stories of individuals who have turned their dreams into reality. In this post, we&apos;re excited to share with you an incredible journey that demonstrates the power of determination, resilience, and hard work.
+
+Our featured success story is about Elon Musk, who started with a dream and transformed it into a successful reality. We&apos;ll take you through their journey, including the challenges they faced, the lessons they learned, and the pivotal moments that led to their success.
+
+You&apos;ll discover how [Insert Name] overcame obstacles, persevered in the face of adversity, and achieved their goals. This success story is a testament to the idea that with the right mindset and unwavering commitment, you can accomplish anything you set your sights on.
+</untitled-ontology-3:content_post>
+        <untitled-ontology-3:Title rdf:datatype="&xsd;string">he Inspiring Journey of a Local Entrepreneur</untitled-ontology-3:Title>
+        <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://www.timedoctor.com/blog/images/2022/02/meeting-agenda-template1.jpg</untitled-ontology-3:Image_Post>
+        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;XYZ_Tech_Solutions"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Post_3 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;Post_3">
+        <rdf:type rdf:resource="&untitled-ontology-3;Blog"/>
+        <untitled-ontology-3:Date_Post rdf:datatype="&xsd;dateTime">31/10/2023</untitled-ontology-3:Date_Post>
+        <untitled-ontology-3:Category rdf:datatype="&xsd;string">Entrepreneurship</untitled-ontology-3:Category>
+        <untitled-ontology-3:Title rdf:datatype="&xsd;string">From Idea to Startup: A Guide to Entrepreneurship</untitled-ontology-3:Title>
+        <untitled-ontology-3:content_post rdf:datatype="&xsd;string">Have you ever had a brilliant business idea that you were eager to turn into a reality? Starting a business can be an exciting yet challenging journey, and this post is your comprehensive guide to entrepreneurship.
+
+We&apos;ll walk you through the essential steps to go from a concept to a fully-fledged startup. Some of the topics we&apos;ll cover include:
+
+Idea generation and validation.
+Creating a business plan and securing funding.
+Building a team and establishing your company&apos;s culture.
+Marketing and growth strategies.
+Overcoming common entrepreneurial challenges.
+Along the way, we&apos;ll draw inspiration from successful entrepreneurs who&apos;ve been through the same ups and downs. Their stories of innovation, determination, and resilience will motivate and guide you on your entrepreneurial path.
+
+Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone with an innovative idea, this post is your roadmap to turning your entrepreneurial dreams into reality.</untitled-ontology-3:content_post>
+        <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://fellow.app/wp-content/uploads/2022/03/inspo-meeting.jpg</untitled-ontology-3:Image_Post>
+        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;TechNex_Solutions,_Inc"/>
+    </NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Project_review -->
 
     <NamedIndividual rdf:about="&untitled-ontology-3;Project_review">
@@ -1829,6 +1927,7 @@ Silicon Valley, CA 12345</untitled-ontology-3:Location>
         <rdf:type rdf:resource="&untitled-ontology-3;Blog_Comment"/>
         <untitled-ontology-3:Publisher rdf:datatype="&xsd;string">Sarah Tounsi</untitled-ontology-3:Publisher>
         <untitled-ontology-3:Com_Content rdf:datatype="&xsd;string">This article offers great strategies for boosting the freelance industry. Continuous learning and networking have been pivotal for my freelance career.</untitled-ontology-3:Com_Content>
+        <untitled-ontology-3:comment_belongs_to_post rdf:resource="&untitled-ontology-3;Post_2"/>
     </NamedIndividual>
     
 
@@ -1840,6 +1939,29 @@ Silicon Valley, CA 12345</untitled-ontology-3:Location>
         <untitled-ontology-3:Publisher rdf:datatype="&xsd;string">Acil Farhat
 </untitled-ontology-3:Publisher>
         <untitled-ontology-3:Com_Content rdf:datatype="&xsd;string">his post hits the mark on the evolving gig economy. Advocating for freelancer rights and fostering collaboration is key.</untitled-ontology-3:Com_Content>
+        <untitled-ontology-3:comment_belongs_to_post rdf:resource="&untitled-ontology-3;Post_2"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#comment_3 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;comment_3">
+        <rdf:type rdf:resource="&untitled-ontology-3;Blog_Comment"/>
+        <untitled-ontology-3:Publisher rdf:datatype="&xsd;string">swdxfghjk</untitled-ontology-3:Publisher>
+        <untitled-ontology-3:Com_Content rdf:datatype="&xsd;string">test</untitled-ontology-3:Com_Content>
+        <untitled-ontology-3:comment_belongs_to_post rdf:resource="&untitled-ontology-3;Post_1"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#comment_4 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;comment_4">
+        <rdf:type rdf:resource="&untitled-ontology-3;Blog_Comment"/>
+        <untitled-ontology-3:Publisher rdf:datatype="&xsd;string">acil farhat</untitled-ontology-3:Publisher>
+        <untitled-ontology-3:Com_Content rdf:datatype="&xsd;string">inspiring</untitled-ontology-3:Com_Content>
+        <untitled-ontology-3:comment_belongs_to_post rdf:resource="&untitled-ontology-3;Post_3"/>
     </NamedIndividual>
     
 
