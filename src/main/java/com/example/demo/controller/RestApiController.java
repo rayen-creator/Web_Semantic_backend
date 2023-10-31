@@ -18,7 +18,6 @@ import com.example.demo.tools.JenaEngine;
 
 
 @RestController
-
 @RequestMapping("/controller")
 @CrossOrigin(origins = "http://localhost:4200")
 public class RestApiController {
@@ -90,6 +89,7 @@ public class RestApiController {
         return jsonArray.toString();
     }
 
+    @CrossOrigin
     @GetMapping("/getcompany")
     public String getcompany() {
 
@@ -120,9 +120,9 @@ public class RestApiController {
             QuerySolution solution = results.nextSolution();
 
             // Create a JSON object for each blog
-            JSONObject blogObject = new JSONObject();
+            JSONObject companyObject = new JSONObject();
 
-            String blog = solution.get("company").toString();
+            String company = solution.get("company").toString();
             String property = solution.get("property").toString();
             String value = solution.get("value").toString();
 
@@ -131,13 +131,13 @@ public class RestApiController {
             String propertyValue = value;
 
             // Add property to the blog object
-            blogObject.put(propertyName, propertyValue);
+            companyObject.put(propertyName, propertyValue);
 
             // Check if the blog object already exists in the list
             boolean blogExists = false;
             for (JSONObject jsonObject : jsonObjects) {
-                if (jsonObject.has(blog)) {
-                    jsonObject.getJSONObject(blog).put(propertyName, propertyValue);
+                if (jsonObject.has(company)) {
+                    jsonObject.getJSONObject(company).put(propertyName, propertyValue);
                     blogExists = true;
                     break;
                 }
@@ -146,7 +146,7 @@ public class RestApiController {
             if (!blogExists) {
                 // Create a new JSON object for the blog and add it to the list
                 JSONObject jsonObject = new JSONObject();
-                jsonObject.put(blog, blogObject);
+                jsonObject.put(company, companyObject);
                 jsonObjects.add(jsonObject);
             }
         }
@@ -156,7 +156,7 @@ public class RestApiController {
 
         return jsonArray.toString();
     }
-
+    @CrossOrigin
     @GetMapping("/getJob")
     public String getJob() {
 
@@ -187,9 +187,9 @@ public class RestApiController {
             QuerySolution solution = results.nextSolution();
 
             // Create a JSON object for each blog
-            JSONObject blogObject = new JSONObject();
+            JSONObject jobObject = new JSONObject();
 
-            String blog = solution.get("job").toString();
+            String job = solution.get("job").toString();
             String property = solution.get("property").toString();
             String value = solution.get("value").toString();
 
@@ -198,13 +198,13 @@ public class RestApiController {
             String propertyValue = value;
 
             // Add property to the blog object
-            blogObject.put(propertyName, propertyValue);
+            jobObject.put(propertyName, propertyValue);
 
             // Check if the blog object already exists in the list
             boolean blogExists = false;
             for (JSONObject jsonObject : jsonObjects) {
-                if (jsonObject.has(blog)) {
-                    jsonObject.getJSONObject(blog).put(propertyName, propertyValue);
+                if (jsonObject.has(job)) {
+                    jsonObject.getJSONObject(job).put(propertyName, propertyValue);
                     blogExists = true;
                     break;
                 }
@@ -213,7 +213,7 @@ public class RestApiController {
             if (!blogExists) {
                 // Create a new JSON object for the blog and add it to the list
                 JSONObject jsonObject = new JSONObject();
-                jsonObject.put(blog, blogObject);
+                jsonObject.put(job, jobObject);
                 jsonObjects.add(jsonObject);
             }
         }
