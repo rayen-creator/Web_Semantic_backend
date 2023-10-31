@@ -52,17 +52,18 @@
 
     <ObjectProperty rdf:about="&untitled-ontology-3;Blog_post_has_author">
         <rdfs:range rdf:resource="&untitled-ontology-3;Applicant"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-3;Blog"/>
         <rdfs:range rdf:resource="&untitled-ontology-3;Company"/>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Blog_post_has_author"/>
-                <allValuesFrom rdf:resource="&untitled-ontology-3;Company"/>
+                <allValuesFrom rdf:resource="&untitled-ontology-3;Applicant"/>
             </Restriction>
         </rdfs:range>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Blog_post_has_author"/>
-                <allValuesFrom rdf:resource="&untitled-ontology-3;Applicant"/>
+                <allValuesFrom rdf:resource="&untitled-ontology-3;Company"/>
             </Restriction>
         </rdfs:range>
     </ObjectProperty>
@@ -94,14 +95,14 @@
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Company_employs"/>
-                <onClass rdf:resource="&untitled-ontology-3;Employee"/>
+                <onClass rdf:resource="&untitled-ontology-3;Manager"/>
                 <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
             </Restriction>
         </rdfs:range>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Company_employs"/>
-                <onClass rdf:resource="&untitled-ontology-3;Manager"/>
+                <onClass rdf:resource="&untitled-ontology-3;Employee"/>
                 <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
             </Restriction>
         </rdfs:range>
@@ -268,6 +269,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#job_belongs_to_company -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-3;job_belongs_to_company">
+        <rdfs:range rdf:resource="&untitled-ontology-3;Company"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-3;Job"/>
+    </ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#projet_has_task -->
 
     <ObjectProperty rdf:about="&untitled-ontology-3;projet_has_task">
@@ -352,39 +362,25 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Ann_Description -->
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Author -->
 
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Ann_Description">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Announcement"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Ann_Image_Url -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Ann_Image_Url">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Announcement"/>
+    <DatatypeProperty rdf:about="&untitled-ontology-3;Author">
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Report"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Ann_Title -->
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Benefits -->
 
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Ann_Title">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Announcement"/>
+    <DatatypeProperty rdf:about="&untitled-ontology-3;Benefits">
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Offer"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Announcement -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Announcement"/>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Announcement_Tag -->
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Blog -->
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;Blog">
         <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
@@ -1010,7 +1006,7 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Announcement -->
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Applicant -->
 
     <Class rdf:about="&untitled-ontology-3;Applicant">
         <rdfs:subClassOf rdf:resource="&untitled-ontology-3;User"/>
@@ -1020,9 +1016,7 @@
 
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Blog -->
 
-    <Class rdf:about="&untitled-ontology-3;Announcement_tag">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Announcement"/>
-    </Class>
+    <Class rdf:about="&untitled-ontology-3;Blog"/>
     
 
 
@@ -1031,12 +1025,6 @@
     <Class rdf:about="&untitled-ontology-3;Blog_Comment">
         <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog"/>
     </Class>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Blog_Post -->
-
-    <Class rdf:about="&untitled-ontology-3;Blog_Post"/>
     
 
 
@@ -1557,6 +1545,7 @@
         <untitled-ontology-3:duration_of_use rdf:datatype="&xsd;string">Contract, 6 months</untitled-ontology-3:duration_of_use>
         <untitled-ontology-3:Name rdf:datatype="&xsd;string">Data Analyst</untitled-ontology-3:Name>
         <untitled-ontology-3:Status rdf:datatype="&xsd;string">Open</untitled-ontology-3:Status>
+        <untitled-ontology-3:job_belongs_to_company rdf:resource="&untitled-ontology-3;XYZ_Tech_Solutions"/>
     </NamedIndividual>
     
 
@@ -1600,6 +1589,7 @@ TechNex is at the forefront of technology, and I&apos;ve had the privilege of wo
         <untitled-ontology-3:Description rdf:datatype="&xsd;string">Create visual designs for marketing materials</untitled-ontology-3:Description>
         <untitled-ontology-3:Name rdf:datatype="&xsd;string">Graphic Designer</untitled-ontology-3:Name>
         <untitled-ontology-3:duration_of_use rdf:datatype="&xsd;string">Part-time, 20 hours/week</untitled-ontology-3:duration_of_use>
+        <untitled-ontology-3:job_belongs_to_company rdf:resource="&untitled-ontology-3;TechNex_Solutions,_Inc"/>
     </NamedIndividual>
     
 
