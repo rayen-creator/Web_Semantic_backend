@@ -79,7 +79,7 @@
         <rdfs:domain rdf:resource="&untitled-ontology-3;Project"/>
         <rdfs:range rdf:resource="&untitled-ontology-3;Review"/>
     </ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Company_belongs_to -->
@@ -1323,13 +1323,39 @@
         <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Portfolio_Showcase"/>
     </NamedIndividual>
 
+    <NamedIndividual rdf:about="&untitled-ontology-3;Announcement_3">
+        <rdf:type rdf:resource="&untitled-ontology-3;Announcement"/>
+        <untitled-ontology-3:Ann_Description rdf:datatype="&xsd;string">Introducing our latest update: Project Tracker! Keep all your projects organized, track progress, and meet deadlines effortlessly. Try it out today and experience a new level of project management.</untitled-ontology-3:Ann_Description>
+        <untitled-ontology-3:Ann_Title rdf:datatype="&xsd;string">New Release: Project Tracker</untitled-ontology-3:Ann_Title>
+        <untitled-ontology-3:Ann_Image_Url rdf:datatype="&xsd;string">https://www.ntaskmanager.com/wp-content/uploads/2020/08/project-tracker-tools.png</untitled-ontology-3:Ann_Image_Url>
+        <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Feature_Update"/>
+        <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;New_Release"/>
+        <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Project_Tracker"/>
+    </NamedIndividual>
+
+
+<NamedIndividual rdf:about="&untitled-ontology-3;Announcement_4">
+    <rdf:type rdf:resource="&untitled-ontology-3;Announcement"/>
+    <untitled-ontology-3:Ann_Description rdf:datatype="&xsd;string">Exciting news for employers! We've enhanced our search algorithm to help you find the perfect freelancer for your project. Connect with top talent quickly and efficiently. Get started today and find the right freelancer for your next project!</untitled-ontology-3:Ann_Description>
+    <untitled-ontology-3:Ann_Title rdf:datatype="&xsd;string">Improved Freelancer Search</untitled-ontology-3:Ann_Title>
+    <untitled-ontology-3:Ann_Image_Url rdf:datatype="&xsd;string">https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2019/03/best-freelance-websites-1.webp</untitled-ontology-3:Ann_Image_Url>
+    <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Feature_Update"/>
+    <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;New_Release"/>
+    <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Freelancer_Search"/>
+</NamedIndividual>
+
+
+
+
+
+
 
 
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Contract2 -->
 
     <NamedIndividual rdf:about="&untitled-ontology-3;Contract2">
         <rdf:type rdf:resource="&untitled-ontology-3;Contrat"/>
-        <untitled-ontology-3:type_contrat rdf:datatype="&xsd;string">PartTime</untitled-ontology-3:type_contrat>
+        <untitled-ontology-3:type_contrat rdf:datatype="&xsd;string">Part Time</untitled-ontology-3:type_contrat>
         <untitled-ontology-3:signatures_user1 rdf:datatype="&xsd;string">Picture of signature 1</untitled-ontology-3:signatures_user1>
         <untitled-ontology-3:signature_user2 rdf:datatype="&xsd;string">Picture of signature2</untitled-ontology-3:signature_user2>
         <untitled-ontology-3:Comment rdf:datatype="&xsd;string">The EMPLOYEE’s appointment (in the instance of new appointments) is subject to a 2 (two) month’s probationary period during which period the EMPLOYER may terminate the services of the EMPLOYEE for any fair reason. One week’s written notice of termination of service to the EMPLOYEE, prior to the end of the probationary period will be given.</untitled-ontology-3:Comment>
@@ -1474,7 +1500,10 @@ Techtown, Silicon Valley, CA 12345</untitled-ontology-3:location>
         <untitled-ontology-3:signatures_user1 rdf:datatype="&xsd;dateTime">2023-12-01</untitled-ontology-3:signatures_user1>
         <untitled-ontology-3:signatures_user1 rdf:datatype="&xsd;string">Client&apos;s signature image</untitled-ontology-3:signatures_user1>
         <untitled-ontology-3:signature_user2 rdf:datatype="&xsd;string">Freelancer&apos;s signature image </untitled-ontology-3:signature_user2>
-        <untitled-ontology-3:type_contrat rdf:datatype="&xsd;string">FullTime</untitled-ontology-3:type_contrat>
+        <untitled-ontology-3:type_contrat rdf:datatype="&xsd;string">Full Time
+
+
+</untitled-ontology-3:type_contrat>
         <untitled-ontology-3:Scope_of_Work rdf:datatype="&xsd;string">The scope of work includes designing marketing materials, up to three rounds of revisions, and delivering the final design files in
 various formats.</untitled-ontology-3:Scope_of_Work>
         <untitled-ontology-3:content rdf:datatype="&xsd;string">This contract defines the scope of work for graphic design services, including creating marketing materials, website graphics, and social media graphics. It also includes the delivery schedule and payment terms</untitled-ontology-3:content>
@@ -1487,8 +1516,7 @@ various formats.</untitled-ontology-3:Scope_of_Work>
 
     <NamedIndividual rdf:about="&untitled-ontology-3;Job_Fair">
         <rdf:type rdf:resource="&untitled-ontology-3;Event"/>
-        <untitled-ontology-3:location rdf:datatype="&xsd;string">123 Main Street, Suite 456
-</untitled-ontology-3:location>
+        <untitled-ontology-3:location rdf:datatype="&xsd;string">123 Main Street, Suite 456</untitled-ontology-3:location>
         <untitled-ontology-3:Date rdf:datatype="&xsd;dateTime">2023-11-15 10:00 AM</untitled-ontology-3:Date>
         <untitled-ontology-3:Event_Content rdf:datatype="&xsd;string">Attend our Job Search Workshop on October 25th at 9:00 AM. Learn effective job search strategies, resume writing, and interview techniques to boost your career prospects.</untitled-ontology-3:Event_Content>
         <untitled-ontology-3:Slogan rdf:datatype="&xsd;string">Discover Your Next Career Adventure!</untitled-ontology-3:Slogan>
@@ -1514,9 +1542,9 @@ various formats.</untitled-ontology-3:Scope_of_Work>
 
     <NamedIndividual rdf:about="&untitled-ontology-3;Marketing_Campaign_Launch">
         <rdf:type rdf:resource="&untitled-ontology-3;Project"/>
-        <untitled-ontology-3:Pro_Name rdf:datatype="&xsd;string"> Marketing Campaign Launch</untitled-ontology-3:Pro_Name>
-        <untitled-ontology-3:status rdf:datatype="&xsd;dateTime"> Not Started</untitled-ontology-3:status>
         <untitled-ontology-3:Creation_date rdf:datatype="&xsd;dateTime">2023-11-16</untitled-ontology-3:Creation_date>
+        <untitled-ontology-3:Pro_Name rdf:datatype="&xsd;string">Marketing Campaign Launch</untitled-ontology-3:Pro_Name>
+        <untitled-ontology-3:status rdf:datatype="&xsd;string">Not Started</untitled-ontology-3:status>
         <untitled-ontology-3:Pro_Description rdf:datatype="&xsd;string">The marketing team is planning a new advertising campaign for an upcoming product launch. The project aims to increase brand visibility and drive sales.</untitled-ontology-3:Pro_Description>
     </NamedIndividual>
 
@@ -1536,7 +1564,7 @@ various formats.</untitled-ontology-3:Scope_of_Work>
     <NamedIndividual rdf:about="&untitled-ontology-3;New_Website_Development">
         <rdf:type rdf:resource="&untitled-ontology-3;Project"/>
         <untitled-ontology-3:Creation_date rdf:datatype="&xsd;dateTime"> 2023-11-15</untitled-ontology-3:Creation_date>
-        <untitled-ontology-3:status rdf:datatype="&xsd;string">In Progress </untitled-ontology-3:status>
+        <untitled-ontology-3:status rdf:datatype="&xsd;string">In Progress</untitled-ontology-3:status>
         <untitled-ontology-3:Pro_Name rdf:datatype="&xsd;string">New Website Development</untitled-ontology-3:Pro_Name>
         <untitled-ontology-3:Pro_Description rdf:datatype="&xsd;string">This project involves creating a new company website with enhanced features and a modern design to improve user experience.</untitled-ontology-3:Pro_Description>
         <untitled-ontology-3:projet_has_task rdf:resource="&untitled-ontology-3;Task1"/>
@@ -1551,8 +1579,7 @@ various formats.</untitled-ontology-3:Scope_of_Work>
         <rdf:type rdf:resource="&untitled-ontology-3;Owner"/>
         <untitled-ontology-3:Phone_Number rdf:datatype="&xsd;int">55874789</untitled-ontology-3:Phone_Number>
         <untitled-ontology-3:LastName rdf:datatype="&xsd;string">Makdouli</untitled-ontology-3:LastName>
-        <untitled-ontology-3:FirstName rdf:datatype="&xsd;string">Nour
-</untitled-ontology-3:FirstName>
+        <untitled-ontology-3:FirstName rdf:datatype="&xsd;string">Nour</untitled-ontology-3:FirstName>
         <untitled-ontology-3:Address rdf:datatype="&xsd;string">Tunis,Tunisie</untitled-ontology-3:Address>
         <untitled-ontology-3:Email rdf:datatype="&xsd;string">noue.Makdouli@esprit.tn</untitled-ontology-3:Email>
         <untitled-ontology-3:Company_belongs_to rdf:resource="&untitled-ontology-3;Nour_Makdouli"/>
@@ -1814,7 +1841,7 @@ You&apos;ll discover how [Insert Name] overcame obstacles, persevered in the fac
         <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://www.timedoctor.com/blog/images/2022/02/meeting-agenda-template1.jpg</untitled-ontology-3:Image_Post>
         <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;XYZ_Tech_Solutions"/>
     </NamedIndividual>
-    
+
 
 
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#job_review -->
@@ -1829,4 +1856,3 @@ You&apos;ll discover how [Insert Name] overcame obstacles, persevered in the fac
 
 
 <!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
-
