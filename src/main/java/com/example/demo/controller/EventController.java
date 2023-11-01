@@ -264,6 +264,71 @@ public class EventController {
 
         return jsonArray.toString();
     }
+    @GetMapping("/getEventsByCategory/{category}")
+    public String getEventsByCategory(@PathVariable String category) {
+        String qexec = "PREFIX ns: <http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#>\n" +
+                "SELECT ?event ?property ?value\n" +
+                "WHERE {\n" +
+                "  ?event a ns:Event.\n" +
+                "  ?event ns:Category_event \"" + category + "\".\n" +  // Filter by category
+                "  ?event ?property ?value.\n" +
+                "}";
+
+        Model model = JenaEngine.readModel("data/freelance.owl");
+
+        QueryExecution qe = QueryExecutionFactory.create(qexec, model);
+        ResultSet results = qe.execSelect();
+
+        // Create a list to hold JSON objects
+        List<JSONObject> jsonObjects = new ArrayList<>();
+
+        // Iterate over the query results
+        while (results.hasNext()) {
+            QuerySolution solution = results.nextSolution();
+
+            // Create a JSON object for each event
+            JSONObject eventObject = new JSONObject();
+
+            String event = solution.get("event").toString();
+            String property = solution.get("property").toString();
+            String value = solution.get("value").toString();
+
+            // Extract property names and values
+            String propertyName = property.substring(property.lastIndexOf("#") + 1);
+            String propertyValue = value;
+
+            // Extract just the date and time part without the extra information
+            if (propertyValue.contains("^^http://www.w3.org/2001/XMLSchema#dateTime")) {
+                propertyValue = propertyValue.split("\\^\\^")[0];
+            }
+
+            // Add property to the event object
+            eventObject.put(propertyName, propertyValue);
+
+            // Check if the event object already exists in the list
+            boolean eventExists = false;
+            for (JSONObject jsonObject : jsonObjects) {
+                if (jsonObject.has(event)) {
+                    jsonObject.getJSONObject(event).put(propertyName, propertyValue);
+                    eventExists = true;
+                    break;
+                }
+            }
+
+            if (!eventExists) {
+                // Create a new JSON object for the event and add it to the list
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put(event, eventObject);
+                jsonObjects.add(jsonObject);
+            }
+        }
+
+        // Convert the list of JSON objects to a JSON array
+        JSONArray jsonArray = new JSONArray(jsonObjects);
+
+        return jsonArray.toString();
+    }
+
 }
 
 

@@ -1490,8 +1490,7 @@ various formats.</untitled-ontology-3:Scope_of_Work>
 
     <NamedIndividual rdf:about="&untitled-ontology-3;Job_Fair">
         <rdf:type rdf:resource="&untitled-ontology-3;Event"/>
-        <untitled-ontology-3:location rdf:datatype="&xsd;string">123 Main Street, Suite 456
-</untitled-ontology-3:location>
+        <untitled-ontology-3:location rdf:datatype="&xsd;string">123 Main Street, Suite 456</untitled-ontology-3:location>
         <untitled-ontology-3:Date rdf:datatype="&xsd;dateTime">2023-11-15 10:00 AM</untitled-ontology-3:Date>
         <untitled-ontology-3:Event_Content rdf:datatype="&xsd;string">Attend our Job Search Workshop on October 25th at 9:00 AM. Learn effective job search strategies, resume writing, and interview techniques to boost your career prospects.</untitled-ontology-3:Event_Content>
         <untitled-ontology-3:Slogan rdf:datatype="&xsd;string">Discover Your Next Career Adventure!</untitled-ontology-3:Slogan>
@@ -1517,9 +1516,9 @@ various formats.</untitled-ontology-3:Scope_of_Work>
 
     <NamedIndividual rdf:about="&untitled-ontology-3;Marketing_Campaign_Launch">
         <rdf:type rdf:resource="&untitled-ontology-3;Project"/>
-        <untitled-ontology-3:Pro_Name rdf:datatype="&xsd;string"> Marketing Campaign Launch</untitled-ontology-3:Pro_Name>
-        <untitled-ontology-3:status rdf:datatype="&xsd;dateTime"> Not Started</untitled-ontology-3:status>
         <untitled-ontology-3:Creation_date rdf:datatype="&xsd;dateTime">2023-11-16</untitled-ontology-3:Creation_date>
+        <untitled-ontology-3:Pro_Name rdf:datatype="&xsd;string">Marketing Campaign Launch</untitled-ontology-3:Pro_Name>
+        <untitled-ontology-3:status rdf:datatype="&xsd;string">Not Started</untitled-ontology-3:status>
         <untitled-ontology-3:Pro_Description rdf:datatype="&xsd;string">The marketing team is planning a new advertising campaign for an upcoming product launch. The project aims to increase brand visibility and drive sales.</untitled-ontology-3:Pro_Description>
     </NamedIndividual>
     
@@ -1539,7 +1538,7 @@ various formats.</untitled-ontology-3:Scope_of_Work>
     <NamedIndividual rdf:about="&untitled-ontology-3;New_Website_Development">
         <rdf:type rdf:resource="&untitled-ontology-3;Project"/>
         <untitled-ontology-3:Creation_date rdf:datatype="&xsd;dateTime"> 2023-11-15</untitled-ontology-3:Creation_date>
-        <untitled-ontology-3:status rdf:datatype="&xsd;string">In Progress </untitled-ontology-3:status>
+        <untitled-ontology-3:status rdf:datatype="&xsd;string">In Progress</untitled-ontology-3:status>
         <untitled-ontology-3:Pro_Name rdf:datatype="&xsd;string">New Website Development</untitled-ontology-3:Pro_Name>
         <untitled-ontology-3:Pro_Description rdf:datatype="&xsd;string">This project involves creating a new company website with enhanced features and a modern design to improve user experience.</untitled-ontology-3:Pro_Description>
         <untitled-ontology-3:projet_has_task rdf:resource="&untitled-ontology-3;Task1"/>
@@ -1554,8 +1553,7 @@ various formats.</untitled-ontology-3:Scope_of_Work>
         <rdf:type rdf:resource="&untitled-ontology-3;Owner"/>
         <untitled-ontology-3:Phone_Number rdf:datatype="&xsd;int">55874789</untitled-ontology-3:Phone_Number>
         <untitled-ontology-3:LastName rdf:datatype="&xsd;string">Makdouli</untitled-ontology-3:LastName>
-        <untitled-ontology-3:FirstName rdf:datatype="&xsd;string">Nour
-</untitled-ontology-3:FirstName>
+        <untitled-ontology-3:FirstName rdf:datatype="&xsd;string">Nour</untitled-ontology-3:FirstName>
         <untitled-ontology-3:Address rdf:datatype="&xsd;string">Tunis,Tunisie</untitled-ontology-3:Address>
         <untitled-ontology-3:Email rdf:datatype="&xsd;string">noue.Makdouli@esprit.tn</untitled-ontology-3:Email>
         <untitled-ontology-3:Company_belongs_to rdf:resource="&untitled-ontology-3;Nour_Makdouli"/>
