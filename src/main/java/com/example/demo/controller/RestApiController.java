@@ -1,8 +1,7 @@
 package com.example.demo.controller;
 
 import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
