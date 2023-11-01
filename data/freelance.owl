@@ -1687,7 +1687,7 @@ various formats.</untitled-ontology-3:Scope_of_Work>
     <NamedIndividual rdf:about="&untitled-ontology-3;Marketing_Campaign_Launch">
         <rdf:type rdf:resource="&untitled-ontology-3;Project"/>
         <untitled-ontology-3:Pro_Name rdf:datatype="&xsd;string"> Marketing Campaign Launch</untitled-ontology-3:Pro_Name>
-        <untitled-ontology-3:status rdf:datatype="&xsd;dateTime"> Not Started</untitled-ontology-3:status>
+        <untitled-ontology-3:status rdf:datatype="&xsd;string"> Not Started</untitled-ontology-3:status>
         <untitled-ontology-3:Creation_date rdf:datatype="&xsd;dateTime">2023-11-16</untitled-ontology-3:Creation_date>
         <untitled-ontology-3:Pro_Description rdf:datatype="&xsd;string">The marketing team is planning a new advertising campaign for an upcoming product launch. The project aims to increase brand visibility and drive sales.</untitled-ontology-3:Pro_Description>
     </NamedIndividual>
