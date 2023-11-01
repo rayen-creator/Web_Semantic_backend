@@ -57,15 +57,27 @@
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Blog_post_has_author"/>
-                <allValuesFrom rdf:resource="&untitled-ontology-3;Applicant"/>
+                <allValuesFrom rdf:resource="&untitled-ontology-3;Company"/>
             </Restriction>
         </rdfs:range>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Blog_post_has_author"/>
-                <allValuesFrom rdf:resource="&untitled-ontology-3;Company"/>
+                <allValuesFrom rdf:resource="&untitled-ontology-3;Applicant"/>
             </Restriction>
         </rdfs:range>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Class_has_review -->
+
+    <ObjectProperty rdf:about="&untitled-ontology-3;Class_has_review">
+        <rdfs:domain rdf:resource="&untitled-ontology-3;Company"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-3;Event"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-3;Job"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-3;Project"/>
+        <rdfs:range rdf:resource="&untitled-ontology-3;Review"/>
     </ObjectProperty>
     
 
@@ -90,19 +102,17 @@
 
     <ObjectProperty rdf:about="&untitled-ontology-3;Company_employs">
         <rdfs:domain rdf:resource="&untitled-ontology-3;Company"/>
-        <rdfs:range rdf:resource="&untitled-ontology-3;Employee"/>
-        <rdfs:range rdf:resource="&untitled-ontology-3;Manager"/>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Company_employs"/>
-                <onClass rdf:resource="&untitled-ontology-3;Manager"/>
+                <onClass rdf:resource="&untitled-ontology-3;Employee"/>
                 <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
             </Restriction>
         </rdfs:range>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&untitled-ontology-3;Company_employs"/>
-                <onClass rdf:resource="&untitled-ontology-3;Employee"/>
+                <onClass rdf:resource="&untitled-ontology-3;Manager"/>
                 <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
             </Restriction>
         </rdfs:range>
@@ -119,33 +129,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Company_has_offers -->
-
-    <ObjectProperty rdf:about="&untitled-ontology-3;Company_has_offers">
-        <rdfs:domain rdf:resource="&untitled-ontology-3;Company"/>
-        <rdfs:range rdf:resource="&untitled-ontology-3;Offer"/>
-    </ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Company_has_projects -->
 
     <ObjectProperty rdf:about="&untitled-ontology-3;Company_has_projects">
         <rdfs:domain rdf:resource="&untitled-ontology-3;Company"/>
         <rdfs:range rdf:resource="&untitled-ontology-3;Project"/>
-    </ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Event_has__attendees -->
-
-    <ObjectProperty rdf:about="&untitled-ontology-3;Event_has__attendees">
-        <rdfs:range rdf:resource="&untitled-ontology-3;Admin"/>
-        <rdfs:range rdf:resource="&untitled-ontology-3;Applicant"/>
-        <rdfs:range rdf:resource="&untitled-ontology-3;Employee"/>
-        <rdfs:domain rdf:resource="&untitled-ontology-3;Event"/>
-        <rdfs:range rdf:resource="&untitled-ontology-3;Manager"/>
-        <rdfs:range rdf:resource="&untitled-ontology-3;Owner"/>
     </ObjectProperty>
     
 
@@ -189,32 +177,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#User_Accept_Request -->
-
-    <ObjectProperty rdf:about="&untitled-ontology-3;User_Accept_Request">
-        <rdfs:domain rdf:resource="&untitled-ontology-3;Applicant"/>
-        <rdfs:range rdf:resource="&untitled-ontology-3;Contrat"/>
-        <rdfs:range rdf:resource="&untitled-ontology-3;Request"/>
-    </ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#User_Add_Review -->
 
     <ObjectProperty rdf:about="&untitled-ontology-3;User_Add_Review">
         <rdfs:domain rdf:resource="&untitled-ontology-3;Applicant"/>
         <rdfs:domain rdf:resource="&untitled-ontology-3;Company"/>
         <rdfs:range rdf:resource="&untitled-ontology-3;Review"/>
-    </ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#User_declineRequest -->
-
-    <ObjectProperty rdf:about="&untitled-ontology-3;User_declineRequest">
-        <rdfs:domain rdf:resource="&untitled-ontology-3;Company"/>
-        <rdfs:range rdf:resource="&untitled-ontology-3;Request"/>
-        <inverseOf rdf:resource="&untitled-ontology-3;User_Accept_Request"/>
     </ObjectProperty>
     
 
@@ -287,23 +255,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#user_sends_request_of_employment -->
-
-    <ObjectProperty rdf:about="&untitled-ontology-3;user_sends_request_of_employment">
-        <rdfs:domain rdf:resource="&untitled-ontology-3;Applicant"/>
-        <rdfs:range rdf:resource="&untitled-ontology-3;Company"/>
-        <rdfs:range rdf:resource="&untitled-ontology-3;Request"/>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&untitled-ontology-3;user_sends_request_of_employment"/>
-                <onClass rdf:resource="&untitled-ontology-3;Request"/>
-                <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">10</maxQualifiedCardinality>
-            </Restriction>
-        </rdfs:range>
-    </ObjectProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -362,24 +313,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Author -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Author">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Report"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Benefits -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Benefits">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Offer"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Blog -->
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;Blog">
@@ -398,6 +331,15 @@
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;Category">
         <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Blog"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Category_event -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-3;Category_event">
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Event"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
@@ -425,33 +367,6 @@
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;Company">
         <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Company_Name -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Company_Name">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Offer"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Conditions -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Conditions">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Offer"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Content -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Content">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Report"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
 
@@ -496,15 +411,6 @@
     <DatatypeProperty rdf:about="&untitled-ontology-3;Description">
         <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Job"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Duration -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Duration">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Offer"/>
-        <rdfs:range rdf:resource="&xsd;double"/>
     </DatatypeProperty>
     
 
@@ -608,15 +514,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Location -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Location">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Offer"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Location_Company -->
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;Location_Company">
@@ -653,16 +550,19 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Offer -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Offer"/>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Phone_Number -->
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;Phone_Number">
         <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#PostId -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-3;PostId">
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Blog"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
@@ -701,30 +601,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Report -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Report"/>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#ReportDate -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;ReportDate">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Report"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Report_type -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Report_type">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Report"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Res_Date -->
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;Res_Date">
@@ -752,24 +628,6 @@
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Review -->
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;Review"/>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Role -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Role">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Offer"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Salary -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Salary">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Offer"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
     
 
 
@@ -851,15 +709,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Type_of_work -->
-
-    <DatatypeProperty rdf:about="&untitled-ontology-3;Type_of_work">
-        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Offer"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#User -->
 
     <DatatypeProperty rdf:about="&untitled-ontology-3;User"/>
@@ -898,6 +747,15 @@
     <DatatypeProperty rdf:about="&untitled-ontology-3;duration_of_use">
         <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Job"/>
         <rdfs:range rdf:resource="&xsd;int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#event_Image -->
+
+    <DatatypeProperty rdf:about="&untitled-ontology-3;event_Image">
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-3;Event"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
 
@@ -1022,9 +880,7 @@
 
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Blog_Comment -->
 
-    <Class rdf:about="&untitled-ontology-3;Blog_Comment">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog"/>
-    </Class>
+    <Class rdf:about="&untitled-ontology-3;Blog_Comment"/>
     
 
 
@@ -1202,22 +1058,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#JobOffer -->
-
-    <Class rdf:about="&untitled-ontology-3;JobOffer">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Offer"/>
-    </Class>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#JobRequest -->
-
-    <Class rdf:about="&untitled-ontology-3;JobRequest">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Request"/>
-    </Class>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Job_Review -->
 
     <Class rdf:about="&untitled-ontology-3;Job_Review">
@@ -1266,12 +1106,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Offer -->
-
-    <Class rdf:about="&untitled-ontology-3;Offer"/>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Owner -->
 
     <Class rdf:about="&untitled-ontology-3;Owner">
@@ -1302,22 +1136,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#ProjectOffer -->
-
-    <Class rdf:about="&untitled-ontology-3;ProjectOffer">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Offer"/>
-    </Class>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#ProjectRequest -->
-
-    <Class rdf:about="&untitled-ontology-3;ProjectRequest">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Request"/>
-    </Class>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Project_review -->
 
     <Class rdf:about="&untitled-ontology-3;Project_review">
@@ -1334,20 +1152,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Report -->
-
-    <Class rdf:about="&untitled-ontology-3;Report">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Request"/>
-    </Class>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Request -->
-
-    <Class rdf:about="&untitled-ontology-3;Request"/>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Reservation -->
 
     <Class rdf:about="&untitled-ontology-3;Reservation"/>
@@ -1360,26 +1164,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Service_Report -->
-
-    <Class rdf:about="&untitled-ontology-3;Service_Report">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Report"/>
-    </Class>
-    
-
-
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Success_Stories -->
 
     <Class rdf:about="&untitled-ontology-3;Success_Stories">
         <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Blog"/>
-    </Class>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#System_Report -->
-
-    <Class rdf:about="&untitled-ontology-3;System_Report">
-        <rdfs:subClassOf rdf:resource="&untitled-ontology-3;Report"/>
     </Class>
     
 
@@ -1515,6 +1303,7 @@
         <untitled-ontology-3:Ann_Description rdf:datatype="&xsd;string">Dear Users, we will be conducting scheduled maintenance on October 31, 2023, from 8:00 AM to 10:00 AM (UTC). During this period, the website will be temporarily unavailable. We apologize for any inconvenience this may cause and appreciate your understanding as we work to improve your experience.</untitled-ontology-3:Ann_Description>
         <untitled-ontology-3:Ann_Title rdf:datatype="&xsd;string">Scheduled Maintenance: October 31, 2023</untitled-ontology-3:Ann_Title>
         <untitled-ontology-3:Ann_Image_Url rdf:datatype="&xsd;string">https://www.gmao.com/wp-content/uploads/etablir-un-plan-de-maintenance-preventive-efficace.png</untitled-ontology-3:Ann_Image_Url>
+        <sameAs rdf:resource="&untitled-ontology-3;Announcement_2"/>
         <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Downtime"/>
         <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Maintenance_Tag"/>
         <untitled-ontology-3:Announcement_has_tags rdf:resource="&untitled-ontology-3;Website_Update"/>
@@ -1562,6 +1351,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Contract2 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;Contract2">
+        <rdf:type rdf:resource="&untitled-ontology-3;Contrat"/>
+        <untitled-ontology-3:type_contrat rdf:datatype="&xsd;string">Part Time</untitled-ontology-3:type_contrat>
+        <untitled-ontology-3:signatures_user1 rdf:datatype="&xsd;string">Picture of signature 1</untitled-ontology-3:signatures_user1>
+        <untitled-ontology-3:signature_user2 rdf:datatype="&xsd;string">Picture of signature2</untitled-ontology-3:signature_user2>
+        <untitled-ontology-3:Comment rdf:datatype="&xsd;string">The EMPLOYEE’s appointment (in the instance of new appointments) is subject to a 2 (two) month’s probationary period during which period the EMPLOYER may terminate the services of the EMPLOYEE for any fair reason. One week’s written notice of termination of service to the EMPLOYEE, prior to the end of the probationary period will be given.</untitled-ontology-3:Comment>
+        <untitled-ontology-3:content rdf:datatype="&xsd;string">The core of the EMPLOYEE’s duties towards the EMPLOYER is a duty to obey all lawful and reasonable order and to perform such work as she / he is directed to perform which falls within his / her vocational ability. Without limiting the aforesaid duties, the EMPLOYEE is obliged to strictly comply with the provision of this agreement, may not misappropriate the EMPLOYER’s property, keep all information entrusted to him / her confidential and have to adhere to the general Code of Conduct that governs all relations with co-employees, clients and patients.
+</untitled-ontology-3:content>
+        <untitled-ontology-3:Scope_of_Work rdf:datatype="&xsd;string">development of backend techonologies using advanced software such as java and springboot.</untitled-ontology-3:Scope_of_Work>
+        <sameAs rdf:resource="&untitled-ontology-3;Job_Contract"/>
+    </NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Data_Analyst -->
 
     <NamedIndividual rdf:about="&untitled-ontology-3;Data_Analyst">
@@ -1572,6 +1377,7 @@
         <untitled-ontology-3:Name rdf:datatype="&xsd;string">Data Analyst</untitled-ontology-3:Name>
         <untitled-ontology-3:Status rdf:datatype="&xsd;string">Open</untitled-ontology-3:Status>
         <untitled-ontology-3:job_belongs_to_company rdf:resource="&untitled-ontology-3;XYZ_Tech_Solutions"/>
+        <untitled-ontology-3:Class_has_review rdf:resource="&untitled-ontology-3;job_review"/>
     </NamedIndividual>
     
 
@@ -1592,8 +1398,7 @@
         <untitled-ontology-3:description rdf:datatype="&xsd;string">I&apos;ve been working at TechNex Solutions for the past three years, and it has been an incredible experience. The company culture here is fantastic, with a strong focus on innovation and personal development. The leadership team is supportive and approachable, and there are ample opportunities for growth within the organization.
 
 TechNex is at the forefront of technology, and I&apos;ve had the privilege of working on some cutting-edge projects that have not only challenged me but also allowed me to expand my skillset. The work-life balance is exceptional, and the benefits are top-notch.</untitled-ontology-3:description>
-        <untitled-ontology-3:type rdf:datatype="&xsd;string">Job Review
-</untitled-ontology-3:type>
+        <untitled-ontology-3:type rdf:datatype="&xsd;string">Job Review</untitled-ontology-3:type>
     </NamedIndividual>
     
 
@@ -1603,6 +1408,52 @@ TechNex is at the forefront of technology, and I&apos;ve had the privilege of wo
     <NamedIndividual rdf:about="&untitled-ontology-3;Feature_Update">
         <rdf:type rdf:resource="&untitled-ontology-3;Announcement_tag"/>
         <untitled-ontology-3:Tag_Name rdf:datatype="&xsd;string">Feature Update</untitled-ontology-3:Tag_Name>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#From_Idea_to_Startup_A_Guide_to_Entrepreneurship -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;From_Idea_to_Startup_A_Guide_to_Entrepreneurship">
+        <rdf:type rdf:resource="&untitled-ontology-3;Blog"/>
+        <untitled-ontology-3:PostId rdf:datatype="&xsd;string">1</untitled-ontology-3:PostId>
+        <untitled-ontology-3:Date_Post rdf:datatype="&xsd;dateTime">11/11/2023</untitled-ontology-3:Date_Post>
+        <untitled-ontology-3:PostId rdf:datatype="&xsd;string">3</untitled-ontology-3:PostId>
+        <untitled-ontology-3:Date_Post rdf:datatype="&xsd;dateTime">31/10/2023</untitled-ontology-3:Date_Post>
+        <untitled-ontology-3:Category rdf:datatype="&xsd;string">Entrepreneurship</untitled-ontology-3:Category>
+        <untitled-ontology-3:Title rdf:datatype="&xsd;string">From Idea to Startup A Guide to Entrepreneurship</untitled-ontology-3:Title>
+        <untitled-ontology-3:content_post rdf:datatype="&xsd;string">Have you ever had a brilliant business idea that you were eager to turn into a reality? Starting a business can be an exciting yet challenging journey, and this post is your comprehensive guide to entrepreneurship.
+
+We&apos;ll walk you through the essential steps to go from a concept to a fully-fledged startup. Some of the topics we&apos;ll cover include:
+
+Idea generation and validation.
+Creating a business plan and securing funding.
+Building a team and establishing your company&apos;s culture.
+Marketing and growth strategies.
+Overcoming common entrepreneurial challenges.
+Along the way, we&apos;ll draw inspiration from successful entrepreneurs who&apos;ve been through the same ups and downs. Their stories of innovation, determination, and resilience will motivate and guide you on your entrepreneurial path.
+
+Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone with an innovative idea, this post is your roadmap to turning your entrepreneurial dreams into reality.</untitled-ontology-3:content_post>
+        <untitled-ontology-3:Category rdf:datatype="&xsd;string">Mentorship</untitled-ontology-3:Category>
+        <untitled-ontology-3:content_post rdf:datatype="&xsd;string">Mentorship is a powerful tool for personal and professional growth. In this post, we&apos;ll delve into the world of mentorship and explore how it can positively impact your life and career.
+
+Mentorship involves a seasoned and experienced individual (the mentor) providing guidance, support, and wisdom to someone less experienced (the mentee). It&apos;s a relationship built on trust and a shared commitment to personal and professional development.
+
+Throughout this post, we&apos;ll discuss the following key aspects of mentorship:
+
+The benefits of having a mentor, such as gaining insights, expanding your network, and accelerating your learning curve.
+How to find the right mentor for your needs and goals.
+Tips for being an effective mentor if you&apos;re in a position to help others.
+Real-life mentorship success stories, showcasing the transformative effects of this relationship.
+Whether you&apos;re seeking guidance to advance your career or considering becoming a mentor to help others, this post will provide valuable insights into the world of mentorship.</untitled-ontology-3:content_post>
+        <untitled-ontology-3:Title rdf:datatype="&xsd;string">The Power of Mentorship Nurturing Talent</untitled-ontology-3:Title>
+        <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://2456764.fs1.hubspotusercontent-na1.net/hubfs/2456764/YoungPeopleBusinessMeeting_1200x627.jpg
+</untitled-ontology-3:Image_Post>
+        <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://fellow.app/wp-content/uploads/2022/03/inspo-meeting.jpg</untitled-ontology-3:Image_Post>
+        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;Sarra_Tounsi"/>
+        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;TechNex_Solutions"/>
+        <sameAs rdf:resource="&untitled-ontology-3;The_Power_of_Mentorship:_Nurturing_Talent"/>
+        <sameAs rdf:resource="&untitled-ontology-3;he_Inspiring_Journey_of_a_Local_Entrepreneur"/>
     </NamedIndividual>
     
 
@@ -1630,10 +1481,14 @@ Techtown, Silicon Valley, CA 12345</untitled-ontology-3:location>
         <untitled-ontology-3:Event_Content rdf:datatype="&xsd;string">Join us at the city&apos;s largest job fair on November 15th at 10:00 AM at the Grand Expo Hall. Meet with top employers, submit your resume, and explore exciting career opportunities.</untitled-ontology-3:Event_Content>
         <untitled-ontology-3:Date rdf:datatype="&xsd;dateTime">November 15-17, 2023</untitled-ontology-3:Date>
         <untitled-ontology-3:label rdf:datatype="&xsd;string">Redefining Tomorrow</untitled-ontology-3:label>
+        <untitled-ontology-3:Category_event rdf:datatype="&xsd;string">Seminar</untitled-ontology-3:Category_event>
         <untitled-ontology-3:Slogan rdf:datatype="&xsd;string">Unlocking the Future, One Idea at a Time</untitled-ontology-3:Slogan>
-        <untitled-ontology-3:Event_has__attendees rdf:resource="&untitled-ontology-3;Acil_Farhat"/>
-        <untitled-ontology-3:Event_has__attendees rdf:resource="&untitled-ontology-3;Nour_Makdouli"/>
-        <untitled-ontology-3:Event_has_reservation rdf:resource="&untitled-ontology-3;Reservation2"/>
+        <untitled-ontology-3:event_Image rdf:datatype="&xsd;string">https://i.pinimg.com/736x/74/ba/0f/74ba0f906f94ed647ec90880064eefc9.jpg</untitled-ontology-3:event_Image>
+        <sameAs rdf:resource="&untitled-ontology-3;Job_Fair"/>
+        <untitled-ontology-3:Event_has_reservation rdf:resource="&untitled-ontology-3;Reservation_1"/>
+        <untitled-ontology-3:Event_has_reservation rdf:resource="&untitled-ontology-3;Reservation_2"/>
+        <untitled-ontology-3:Event_has_reservation rdf:resource="&untitled-ontology-3;Reservation_3"/>
+        <untitled-ontology-3:Event_is_organized_by rdf:resource="&untitled-ontology-3;XYZ_Tech_Solutions"/>
     </NamedIndividual>
     
 
@@ -1661,14 +1516,15 @@ various formats.</untitled-ontology-3:Scope_of_Work>
 
     <NamedIndividual rdf:about="&untitled-ontology-3;Job_Fair">
         <rdf:type rdf:resource="&untitled-ontology-3;Event"/>
-        <untitled-ontology-3:location rdf:datatype="&xsd;string">123 Main Street, Suite 456
-</untitled-ontology-3:location>
+        <untitled-ontology-3:location rdf:datatype="&xsd;string">123 Main Street, Suite 456</untitled-ontology-3:location>
         <untitled-ontology-3:Date rdf:datatype="&xsd;dateTime">2023-11-15 10:00 AM</untitled-ontology-3:Date>
         <untitled-ontology-3:Event_Content rdf:datatype="&xsd;string">Attend our Job Search Workshop on October 25th at 9:00 AM. Learn effective job search strategies, resume writing, and interview techniques to boost your career prospects.</untitled-ontology-3:Event_Content>
         <untitled-ontology-3:Slogan rdf:datatype="&xsd;string">Discover Your Next Career Adventure!</untitled-ontology-3:Slogan>
-        <untitled-ontology-3:label rdf:datatype="&xsd;string">Job Fair
-</untitled-ontology-3:label>
-        <untitled-ontology-3:Event_has_reservation rdf:resource="&untitled-ontology-3;Reservation1"/>
+        <untitled-ontology-3:Category_event rdf:datatype="&xsd;string">Fair</untitled-ontology-3:Category_event>
+        <untitled-ontology-3:label rdf:datatype="&xsd;string">Job Fair</untitled-ontology-3:label>
+        <untitled-ontology-3:event_Image rdf:datatype="&xsd;string">https://s3.amazonaws.com/thumbnails.venngage.com/template/f13d5cea-fd40-4cb2-8ad6-6dd26661fcdc.png</untitled-ontology-3:event_Image>
+        <untitled-ontology-3:Event_has_reservation rdf:resource="&untitled-ontology-3;Reservation_4"/>
+        <untitled-ontology-3:Event_is_organized_by rdf:resource="&untitled-ontology-3;TechNex_Solutions"/>
     </NamedIndividual>
     
 
@@ -1686,9 +1542,9 @@ various formats.</untitled-ontology-3:Scope_of_Work>
 
     <NamedIndividual rdf:about="&untitled-ontology-3;Marketing_Campaign_Launch">
         <rdf:type rdf:resource="&untitled-ontology-3;Project"/>
-        <untitled-ontology-3:Pro_Name rdf:datatype="&xsd;string"> Marketing Campaign Launch</untitled-ontology-3:Pro_Name>
-        <untitled-ontology-3:status rdf:datatype="&xsd;dateTime"> Not Started</untitled-ontology-3:status>
         <untitled-ontology-3:Creation_date rdf:datatype="&xsd;dateTime">2023-11-16</untitled-ontology-3:Creation_date>
+        <untitled-ontology-3:Pro_Name rdf:datatype="&xsd;string">Marketing Campaign Launch</untitled-ontology-3:Pro_Name>
+        <untitled-ontology-3:status rdf:datatype="&xsd;string">Not Started</untitled-ontology-3:status>
         <untitled-ontology-3:Pro_Description rdf:datatype="&xsd;string">The marketing team is planning a new advertising campaign for an upcoming product launch. The project aims to increase brand visibility and drive sales.</untitled-ontology-3:Pro_Description>
     </NamedIndividual>
     
@@ -1708,7 +1564,7 @@ various formats.</untitled-ontology-3:Scope_of_Work>
     <NamedIndividual rdf:about="&untitled-ontology-3;New_Website_Development">
         <rdf:type rdf:resource="&untitled-ontology-3;Project"/>
         <untitled-ontology-3:Creation_date rdf:datatype="&xsd;dateTime"> 2023-11-15</untitled-ontology-3:Creation_date>
-        <untitled-ontology-3:status rdf:datatype="&xsd;string">In Progress </untitled-ontology-3:status>
+        <untitled-ontology-3:status rdf:datatype="&xsd;string">In Progress</untitled-ontology-3:status>
         <untitled-ontology-3:Pro_Name rdf:datatype="&xsd;string">New Website Development</untitled-ontology-3:Pro_Name>
         <untitled-ontology-3:Pro_Description rdf:datatype="&xsd;string">This project involves creating a new company website with enhanced features and a modern design to improve user experience.</untitled-ontology-3:Pro_Description>
         <untitled-ontology-3:projet_has_task rdf:resource="&untitled-ontology-3;Task1"/>
@@ -1723,32 +1579,10 @@ various formats.</untitled-ontology-3:Scope_of_Work>
         <rdf:type rdf:resource="&untitled-ontology-3;Owner"/>
         <untitled-ontology-3:Phone_Number rdf:datatype="&xsd;int">55874789</untitled-ontology-3:Phone_Number>
         <untitled-ontology-3:LastName rdf:datatype="&xsd;string">Makdouli</untitled-ontology-3:LastName>
-        <untitled-ontology-3:FirstName rdf:datatype="&xsd;string">Nour
-</untitled-ontology-3:FirstName>
+        <untitled-ontology-3:FirstName rdf:datatype="&xsd;string">Nour</untitled-ontology-3:FirstName>
         <untitled-ontology-3:Address rdf:datatype="&xsd;string">Tunis,Tunisie</untitled-ontology-3:Address>
         <untitled-ontology-3:Email rdf:datatype="&xsd;string">noue.Makdouli@esprit.tn</untitled-ontology-3:Email>
         <untitled-ontology-3:Company_belongs_to rdf:resource="&untitled-ontology-3;Nour_Makdouli"/>
-    </NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Offer_of_employment -->
-
-    <NamedIndividual rdf:about="&untitled-ontology-3;Offer_of_employment">
-        <rdf:type rdf:resource="&untitled-ontology-3;JobOffer"/>
-        <untitled-ontology-3:Salary rdf:datatype="&xsd;string">$120,000 per year</untitled-ontology-3:Salary>
-        <untitled-ontology-3:Conditions rdf:datatype="&xsd;string">-Bachelor&apos;s or higher degree in Computer Science or related field.
--Minimum of 5 years of software development experience.
--Proficiency in multiple programming languages, including Java, Python, and JavaScript.</untitled-ontology-3:Conditions>
-        <untitled-ontology-3:Role rdf:datatype="&xsd;string">Design and develop software solutions,
-Debug and troubleshoot software issues</untitled-ontology-3:Role>
-        <untitled-ontology-3:Duration rdf:datatype="&xsd;string">Full-time</untitled-ontology-3:Duration>
-        <untitled-ontology-3:Type_of_work rdf:datatype="&xsd;string">Senior Software Engineer</untitled-ontology-3:Type_of_work>
-        <untitled-ontology-3:Company_Name rdf:datatype="&xsd;string">Tech Innovations Inc</untitled-ontology-3:Company_Name>
-        <untitled-ontology-3:Location rdf:datatype="&xsd;string">Tech Innovations Inc. Headquarters
-123 Tech Park Drive
-Silicon Valley, CA 12345</untitled-ontology-3:Location>
-        <untitled-ontology-3:Company_has_offers rdf:resource="&untitled-ontology-3;Offer_of_employment"/>
     </NamedIndividual>
     
 
@@ -1758,75 +1592,6 @@ Silicon Valley, CA 12345</untitled-ontology-3:Location>
     <NamedIndividual rdf:about="&untitled-ontology-3;Portfolio_Showcase">
         <rdf:type rdf:resource="&untitled-ontology-3;Announcement_tag"/>
         <untitled-ontology-3:Tag_Name rdf:datatype="&xsd;string">Portfolio Showcase</untitled-ontology-3:Tag_Name>
-    </NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Post_1 -->
-
-    <NamedIndividual rdf:about="&untitled-ontology-3;Post_1">
-        <rdf:type rdf:resource="&untitled-ontology-3;Blog"/>
-        <untitled-ontology-3:Date_Post rdf:datatype="&xsd;dateTime">11/11/2023</untitled-ontology-3:Date_Post>
-        <untitled-ontology-3:Category rdf:datatype="&xsd;string">Mentorship</untitled-ontology-3:Category>
-        <untitled-ontology-3:content_post rdf:datatype="&xsd;string">Mentorship is a powerful tool for personal and professional growth. In this post, we&apos;ll delve into the world of mentorship and explore how it can positively impact your life and career.
-
-Mentorship involves a seasoned and experienced individual (the mentor) providing guidance, support, and wisdom to someone less experienced (the mentee). It&apos;s a relationship built on trust and a shared commitment to personal and professional development.
-
-Throughout this post, we&apos;ll discuss the following key aspects of mentorship:
-
-The benefits of having a mentor, such as gaining insights, expanding your network, and accelerating your learning curve.
-How to find the right mentor for your needs and goals.
-Tips for being an effective mentor if you&apos;re in a position to help others.
-Real-life mentorship success stories, showcasing the transformative effects of this relationship.
-Whether you&apos;re seeking guidance to advance your career or considering becoming a mentor to help others, this post will provide valuable insights into the world of mentorship.</untitled-ontology-3:content_post>
-        <untitled-ontology-3:Title rdf:datatype="&xsd;string">The Power of Mentorship: Nurturing Talent</untitled-ontology-3:Title>
-        <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://2456764.fs1.hubspotusercontent-na1.net/hubfs/2456764/YoungPeopleBusinessMeeting_1200x627.jpg
-</untitled-ontology-3:Image_Post>
-        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;Sarra_Tounsi"/>
-    </NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Post_2 -->
-
-    <NamedIndividual rdf:about="&untitled-ontology-3;Post_2">
-        <rdf:type rdf:resource="&untitled-ontology-3;Blog"/>
-        <untitled-ontology-3:Date_Post rdf:datatype="&xsd;dateTime">October 18, 2023</untitled-ontology-3:Date_Post>
-        <untitled-ontology-3:Category rdf:datatype="&xsd;string">Success Stories</untitled-ontology-3:Category>
-        <untitled-ontology-3:content_post rdf:datatype="&xsd;string">There&apos;s something truly inspiring about hearing the stories of individuals who have turned their dreams into reality. In this post, we&apos;re excited to share with you an incredible journey that demonstrates the power of determination, resilience, and hard work.
-
-Our featured success story is about Elon Musk, who started with a dream and transformed it into a successful reality. We&apos;ll take you through their journey, including the challenges they faced, the lessons they learned, and the pivotal moments that led to their success.
-
-You&apos;ll discover how [Insert Name] overcame obstacles, persevered in the face of adversity, and achieved their goals. This success story is a testament to the idea that with the right mindset and unwavering commitment, you can accomplish anything you set your sights on.
-</untitled-ontology-3:content_post>
-        <untitled-ontology-3:Title rdf:datatype="&xsd;string">he Inspiring Journey of a Local Entrepreneur</untitled-ontology-3:Title>
-        <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://www.timedoctor.com/blog/images/2022/02/meeting-agenda-template1.jpg</untitled-ontology-3:Image_Post>
-        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;XYZ_Tech_Solutions"/>
-    </NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Post_3 -->
-
-    <NamedIndividual rdf:about="&untitled-ontology-3;Post_3">
-        <rdf:type rdf:resource="&untitled-ontology-3;Blog"/>
-        <untitled-ontology-3:Date_Post rdf:datatype="&xsd;dateTime">31/10/2023</untitled-ontology-3:Date_Post>
-        <untitled-ontology-3:Category rdf:datatype="&xsd;string">Entrepreneurship</untitled-ontology-3:Category>
-        <untitled-ontology-3:Title rdf:datatype="&xsd;string">From Idea to Startup: A Guide to Entrepreneurship</untitled-ontology-3:Title>
-        <untitled-ontology-3:content_post rdf:datatype="&xsd;string">Have you ever had a brilliant business idea that you were eager to turn into a reality? Starting a business can be an exciting yet challenging journey, and this post is your comprehensive guide to entrepreneurship.
-
-We&apos;ll walk you through the essential steps to go from a concept to a fully-fledged startup. Some of the topics we&apos;ll cover include:
-
-Idea generation and validation.
-Creating a business plan and securing funding.
-Building a team and establishing your company&apos;s culture.
-Marketing and growth strategies.
-Overcoming common entrepreneurial challenges.
-Along the way, we&apos;ll draw inspiration from successful entrepreneurs who&apos;ve been through the same ups and downs. Their stories of innovation, determination, and resilience will motivate and guide you on your entrepreneurial path.
-
-Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone with an innovative idea, this post is your roadmap to turning your entrepreneurial dreams into reality.</untitled-ontology-3:content_post>
-        <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://fellow.app/wp-content/uploads/2022/03/inspo-meeting.jpg</untitled-ontology-3:Image_Post>
-        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;TechNex_Solutions"/>
     </NamedIndividual>
     
 
@@ -1841,23 +1606,57 @@ Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone wit
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Reservation1 -->
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Rayen_Ouesleti -->
 
-    <NamedIndividual rdf:about="&untitled-ontology-3;Reservation1">
-        <rdf:type rdf:resource="&untitled-ontology-3;Reservation"/>
-        <untitled-ontology-3:Res_Date rdf:datatype="&xsd;dateTime">2023-10-25 9:00 AM</untitled-ontology-3:Res_Date>
-        <untitled-ontology-3:Res_User rdf:datatype="&xsd;string">Nour Makdouli
-</untitled-ontology-3:Res_User>
+    <NamedIndividual rdf:about="&untitled-ontology-3;Rayen_Ouesleti">
+        <rdf:type rdf:resource="&untitled-ontology-3;Applicant"/>
+        <untitled-ontology-3:Address rdf:datatype="&xsd;string">05 repeated morocon street Megrine</untitled-ontology-3:Address>
+        <untitled-ontology-3:Phone_Number rdf:datatype="&xsd;string">39568247</untitled-ontology-3:Phone_Number>
+        <untitled-ontology-3:LastName rdf:datatype="&xsd;string">Ouesleti</untitled-ontology-3:LastName>
+        <untitled-ontology-3:FirstName rdf:datatype="&xsd;string">Rayen</untitled-ontology-3:FirstName>
+        <untitled-ontology-3:Email rdf:datatype="&xsd;string">rayen@esrit.tn</untitled-ontology-3:Email>
+        <untitled-ontology-3:User_signContract rdf:resource="&untitled-ontology-3;Contract2"/>
+        <sameAs rdf:resource="&untitled-ontology-3;Sarra_Tounsi"/>
     </NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Reservation2 -->
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Reservation_1 -->
 
-    <NamedIndividual rdf:about="&untitled-ontology-3;Reservation2">
+    <NamedIndividual rdf:about="&untitled-ontology-3;Reservation_1">
+        <rdf:type rdf:resource="&untitled-ontology-3;Reservation"/>
+        <untitled-ontology-3:Res_Date rdf:datatype="&xsd;dateTime">2023-10-25 9:00 AM</untitled-ontology-3:Res_Date>
+        <untitled-ontology-3:Res_User rdf:datatype="&xsd;string">Acil Farhat</untitled-ontology-3:Res_User>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Reservation_2 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;Reservation_2">
         <rdf:type rdf:resource="&untitled-ontology-3;Reservation"/>
         <untitled-ontology-3:Res_Date rdf:datatype="&xsd;dateTime">2023-11-15 10:00 AM</untitled-ontology-3:Res_Date>
-        <untitled-ontology-3:Res_User rdf:datatype="&xsd;string">Nour</untitled-ontology-3:Res_User>
+        <untitled-ontology-3:Res_User rdf:datatype="&xsd;string">Sarra Tounsi</untitled-ontology-3:Res_User>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Reservation_3 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;Reservation_3">
+        <rdf:type rdf:resource="&untitled-ontology-3;Reservation"/>
+        <untitled-ontology-3:Res_Date rdf:datatype="&xsd;dateTime">2023-10-15 10:50 AM</untitled-ontology-3:Res_Date>
+        <untitled-ontology-3:Res_User rdf:datatype="&xsd;string">Mohamed farhin</untitled-ontology-3:Res_User>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#Reservation_4 -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;Reservation_4">
+        <rdf:type rdf:resource="&untitled-ontology-3;Reservation"/>
+        <untitled-ontology-3:Res_Date rdf:datatype="&xsd;dateTime">2023-10-15 10:50 AM</untitled-ontology-3:Res_Date>
+        <untitled-ontology-3:Res_User rdf:datatype="&xsd;string">Rayen Ouesleti</untitled-ontology-3:Res_User>
     </NamedIndividual>
     
 
@@ -1909,6 +1708,24 @@ Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone wit
         <untitled-ontology-3:Services rdf:datatype="&xsd;string">echNex Solutions provides a range of services, including software development, IT consulting, cloud solutions, and hardware products.</untitled-ontology-3:Services>
         <untitled-ontology-3:Company_has_job__openings rdf:resource="&untitled-ontology-3;Graphic_Designer"/>
         <untitled-ontology-3:Company_has_projects rdf:resource="&untitled-ontology-3;Marketing_Campaign_Launch"/>
+        <untitled-ontology-3:Class_has_review rdf:resource="&untitled-ontology-3;company_review"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#The_Power_of_Mentorship:_Nurturing_Talent -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;The_Power_of_Mentorship:_Nurturing_Talent">
+        <rdf:type rdf:resource="&untitled-ontology-3;Blog"/>
+        <untitled-ontology-3:Date_Post rdf:datatype="&xsd;string">11/11/2023</untitled-ontology-3:Date_Post>
+        <untitled-ontology-3:PostId rdf:datatype="&xsd;string">4</untitled-ontology-3:PostId>
+        <untitled-ontology-3:Category rdf:datatype="&xsd;string">Mentorship</untitled-ontology-3:Category>
+        <untitled-ontology-3:content_post rdf:datatype="&xsd;string">Mentorship is a powerful tool for personal and professional growth. In this post, we&apos;ll delve into the world of mentorship and explore how it can positively impact your life and career.
+
+Mentorship involves a seasoned and experienced individual (the mentor) providing guidance, support, and wisdom to someone less experienced (the mentee). It&apos;s a relationship built on trust and a shared commitment to personal and professional development.</untitled-ontology-3:content_post>
+        <untitled-ontology-3:Title rdf:datatype="&xsd;string">The Power of Mentorship: Nurturing Talent</untitled-ontology-3:Title>
+        <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://guider-ai.com/wp-content/uploads/2020/01/Types-of-mentoring.png</untitled-ontology-3:Image_Post>
+        <sameAs rdf:resource="&untitled-ontology-3;he_Inspiring_Journey_of_a_Local_Entrepreneur"/>
     </NamedIndividual>
     
 
@@ -1932,7 +1749,6 @@ Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone wit
         <untitled-ontology-3:Name_Company rdf:datatype="&xsd;string">XYZ Tech Solutions</untitled-ontology-3:Name_Company>
         <untitled-ontology-3:Company_has_job__openings rdf:resource="&untitled-ontology-3;Data_Analyst"/>
         <untitled-ontology-3:Company_has_projects rdf:resource="&untitled-ontology-3;New_Website_Development"/>
-        <untitled-ontology-3:Company_has_offers rdf:resource="&untitled-ontology-3;Offer_of_employment"/>
     </NamedIndividual>
     
 
@@ -1943,7 +1759,10 @@ Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone wit
         <rdf:type rdf:resource="&untitled-ontology-3;Blog_Comment"/>
         <untitled-ontology-3:Publisher rdf:datatype="&xsd;string">Sarah Tounsi</untitled-ontology-3:Publisher>
         <untitled-ontology-3:Com_Content rdf:datatype="&xsd;string">This article offers great strategies for boosting the freelance industry. Continuous learning and networking have been pivotal for my freelance career.</untitled-ontology-3:Com_Content>
-        <untitled-ontology-3:comment_belongs_to_post rdf:resource="&untitled-ontology-3;Post_2"/>
+        <sameAs rdf:resource="&untitled-ontology-3;comment_2"/>
+        <sameAs rdf:resource="&untitled-ontology-3;comment_3"/>
+        <sameAs rdf:resource="&untitled-ontology-3;comment_4"/>
+        <untitled-ontology-3:comment_belongs_to_post rdf:resource="&untitled-ontology-3;he_Inspiring_Journey_of_a_Local_Entrepreneur"/>
     </NamedIndividual>
     
 
@@ -1955,7 +1774,9 @@ Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone wit
         <untitled-ontology-3:Publisher rdf:datatype="&xsd;string">Acil Farhat
 </untitled-ontology-3:Publisher>
         <untitled-ontology-3:Com_Content rdf:datatype="&xsd;string">his post hits the mark on the evolving gig economy. Advocating for freelancer rights and fostering collaboration is key.</untitled-ontology-3:Com_Content>
-        <untitled-ontology-3:comment_belongs_to_post rdf:resource="&untitled-ontology-3;Post_2"/>
+        <sameAs rdf:resource="&untitled-ontology-3;comment_3"/>
+        <sameAs rdf:resource="&untitled-ontology-3;comment_4"/>
+        <untitled-ontology-3:comment_belongs_to_post rdf:resource="&untitled-ontology-3;he_Inspiring_Journey_of_a_Local_Entrepreneur"/>
     </NamedIndividual>
     
 
@@ -1964,9 +1785,10 @@ Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone wit
 
     <NamedIndividual rdf:about="&untitled-ontology-3;comment_3">
         <rdf:type rdf:resource="&untitled-ontology-3;Blog_Comment"/>
-        <untitled-ontology-3:Publisher rdf:datatype="&xsd;string">swdxfghjk</untitled-ontology-3:Publisher>
-        <untitled-ontology-3:Com_Content rdf:datatype="&xsd;string">test</untitled-ontology-3:Com_Content>
-        <untitled-ontology-3:comment_belongs_to_post rdf:resource="&untitled-ontology-3;Post_1"/>
+        <untitled-ontology-3:Com_Content rdf:datatype="&xsd;string"> couldn&apos;t agree more with the importance of mentorship! It&apos;s been a game-changer for me. I&apos;ve gained so much valuable advice and insights from my mentor, and it has significantly accelerated my career growth.</untitled-ontology-3:Com_Content>
+        <untitled-ontology-3:Publisher rdf:datatype="&xsd;string">Sarra Tounsi</untitled-ontology-3:Publisher>
+        <untitled-ontology-3:comment_belongs_to_post rdf:resource="&untitled-ontology-3;From_Idea_to_Startup_A_Guide_to_Entrepreneurship"/>
+        <sameAs rdf:resource="&untitled-ontology-3;comment_4"/>
     </NamedIndividual>
     
 
@@ -1975,9 +1797,9 @@ Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone wit
 
     <NamedIndividual rdf:about="&untitled-ontology-3;comment_4">
         <rdf:type rdf:resource="&untitled-ontology-3;Blog_Comment"/>
+        <untitled-ontology-3:Com_Content rdf:datatype="&xsd;string">The benefits of mentorship are undeniable. It&apos;s like having a trusted guide in a challenging wilderness. Thanks for shedding light on this essential aspect of entrepreneurship.</untitled-ontology-3:Com_Content>
         <untitled-ontology-3:Publisher rdf:datatype="&xsd;string">acil farhat</untitled-ontology-3:Publisher>
-        <untitled-ontology-3:Com_Content rdf:datatype="&xsd;string">inspiring</untitled-ontology-3:Com_Content>
-        <untitled-ontology-3:comment_belongs_to_post rdf:resource="&untitled-ontology-3;Post_3"/>
+        <untitled-ontology-3:comment_belongs_to_post rdf:resource="&untitled-ontology-3;From_Idea_to_Startup_A_Guide_to_Entrepreneurship"/>
     </NamedIndividual>
     
 
@@ -1998,6 +1820,26 @@ Whether you&apos;re a budding entrepreneur, a startup enthusiast, or someone wit
         <rdf:type rdf:resource="&untitled-ontology-3;Review"/>
         <untitled-ontology-3:type rdf:datatype="&xsd;string">event_review</untitled-ontology-3:type>
         <untitled-ontology-3:description rdf:datatype="&xsd;string">not bad</untitled-ontology-3:description>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/houssem/ontologies/2023/9/untitled-ontology-3#he_Inspiring_Journey_of_a_Local_Entrepreneur -->
+
+    <NamedIndividual rdf:about="&untitled-ontology-3;he_Inspiring_Journey_of_a_Local_Entrepreneur">
+        <rdf:type rdf:resource="&untitled-ontology-3;Blog"/>
+        <untitled-ontology-3:PostId rdf:datatype="&xsd;string">2</untitled-ontology-3:PostId>
+        <untitled-ontology-3:Date_Post rdf:datatype="&xsd;dateTime">October 18, 2023</untitled-ontology-3:Date_Post>
+        <untitled-ontology-3:Category rdf:datatype="&xsd;string">Success Stories</untitled-ontology-3:Category>
+        <untitled-ontology-3:content_post rdf:datatype="&xsd;string">There&apos;s something truly inspiring about hearing the stories of individuals who have turned their dreams into reality. In this post, we&apos;re excited to share with you an incredible journey that demonstrates the power of determination, resilience, and hard work.
+
+Our featured success story is about Elon Musk, who started with a dream and transformed it into a successful reality. We&apos;ll take you through their journey, including the challenges they faced, the lessons they learned, and the pivotal moments that led to their success.
+
+You&apos;ll discover how [Insert Name] overcame obstacles, persevered in the face of adversity, and achieved their goals. This success story is a testament to the idea that with the right mindset and unwavering commitment, you can accomplish anything you set your sights on.
+</untitled-ontology-3:content_post>
+        <untitled-ontology-3:Title rdf:datatype="&xsd;string">he Inspiring Journey of a Local Entrepreneur</untitled-ontology-3:Title>
+        <untitled-ontology-3:Image_Post rdf:datatype="&xsd;string">https://www.timedoctor.com/blog/images/2022/02/meeting-agenda-template1.jpg</untitled-ontology-3:Image_Post>
+        <untitled-ontology-3:Blog_post_has_author rdf:resource="&untitled-ontology-3;XYZ_Tech_Solutions"/>
     </NamedIndividual>
     
 
