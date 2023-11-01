@@ -15,7 +15,6 @@ import com.example.demo.tools.JenaEngine;
 
 
 @RestController
-
 @RequestMapping("/controller")
 @CrossOrigin(origins = "http://localhost:4200")
 public class RestApiController {
