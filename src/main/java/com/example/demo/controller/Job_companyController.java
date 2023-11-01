@@ -210,7 +210,7 @@ public class Job_companyController {
                 "SELECT ?job ?property ?value\n" +
                 "WHERE {\n" +
                 "?job a ns:Job.\n" +
-                "?job ns:job_belongs_to_company ns: \"" + Name_Company + "\".\n" +
+                "?job ns:job_belongs_to_company ns:" + Name_Company + ".\n" +
                 "?job ?property ?value.\n" +
                 "}";
 
